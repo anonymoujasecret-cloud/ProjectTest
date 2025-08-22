@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Belajar IT & Coding – Gratis</title>
+  <meta name="description" content="Website pembelajaran IT & coding gratis: roadmap, materi, playground, kuis, dan sumber belajar. Tanpa kursus berbayar, tanpa halaman kontak." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><div class="logo"></div> <span>Belajar IT & Coding</span></div>
+      <nav>
+        <ul>
+          <li><a href="#hero">Beranda</a></li>
+          <li><a href="#roadmap">Roadmap</a></li>
+          <li><a href="#materi">Materi</a></li>
+          <li><a href="#playground">Playground</a></li>
+          <li><a href="#kuis">Kuis</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#tentang">Tentang</a></li>
+        </ul>
+      </nav>
+      <div class="actions">
+        <button class="btn" id="themeBtn" aria-label="Toggle tema">🌙/☀️</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero container" id="hero">
+      <div class="hero-wrap">
+        <div>
+          <span class="tag">Muhammad Mirza Alvaro • Siswa SMP Kelas 2</span>
+          <h1>Belajar IT & Coding secara <span class="grad">praktis</span> & <span class="grad2">modern</span></h1>
+          <p>Mulai dari dasar hingga mahir: HTML, CSS, JavaScript, Git, Python, hingga dasar jaringan & keamanan informasi. Disusun rapi, interaktif, dan bisa dicetak.</p>
+          <div class="stat">
+            <div class="k"><strong id="progressPercent">0%</strong><br><span class="hint">Progres kamu</span></div>
+            <div class="k"><strong>30+ materi</strong><br><span class="hint">ringkas & padat</span></div>
+            <div class="k"><strong>Playground</strong><br><span class="hint">coba & jalankan kode</span></div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="section-title"><h2>Mulai Cepat</h2></div>
+          <ol style="margin:0; padding-left: 18px;">
+            <li>Baca roadmap singkat di bawah untuk urutan belajar.</li>
+            <li>Pilih materi dan tandai selesai saat paham.</li>
+            <li>Eksperimen di Playground dan kerjakan kuis.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section class="container" id="roadmap">
+      <div class="section-title">
+        <h2>Roadmap Belajar</h2>
+        <span class="hint">Ikuti urutan agar fondasi kuat.</span>
+      </div>
+      <div class="roadmap">
+        <div class="chip"><div class="step">1</div> Dasar Web: HTML → CSS → JS</div>
+        <div class="chip"><div class="step">2</div> Version Control: Git & GitHub</div>
+        <div class="chip"><div class="step">3</div> Bahasa Lain: Python (otomasi & data)</div>
+        <div class="chip"><div class="step">4</div> Lanjut: Jaringan, HTTP, API</div>
+        <div class="chip"><div class="step">5</div> Frontend Lanjut: DOM, modul, aksesibilitas</div>
+        <div class="chip"><div class="step">6</div> Backend Dasar: konsep REST, basis data</div>
+        <div class="chip"><div class="step">7</div> Testing, Debugging & Deploy</div>
+        <div class="chip"><div class="step">8</div> Keamanan Dasar (etis & legal)</div>
+      </div>
+    </section>
+
+    <!-- Materi List -->
+    <section class="container" id="materi">
+      <div class="section-title">
+        <h2>Katalog Materi</h2>
+        <div class="filter" style="width: 420px; max-width:100%">
+          <input id="search" class="input" placeholder="Cari materi (mis. HTML, Git, API, Python)…" />
+          <button class="btn" id="resetBtn">Reset</button>
+        </div>
+      </div>
+      <div class="tools" id="cards"></div>
+    </section>
+
+    <!-- Playground -->
+    <section class="container" id="playground">
+      <div class="section-title">
+        <h2>Playground Kode</h2>
+        <span class="hint">Tulis HTML/CSS/JS lalu tekan Jalankan.</span>
+      </div>
+      <div class="split">
+        <div class="editor">
+          <div class="tabs">
+            <button class="tab active" data-target="html">HTML</button>
+            <button class="tab" data-target="css">CSS</button>
+            <button class="tab" data-target="js">JS</button>
+            <div style="margin-left:auto; display:flex; gap:8px;">
+              <button class="btn" id="runBtn">Jalankan ▶</button>
+              <button class="btn" id="shareBtn" title="Salin tautan kode">Bagikan 🔗</button>
+            </div>
+          </div>
+          <textarea class="code" id="code-html" spellcheck="false"><!-- Tuliskan HTML di sini -->
+<div class="box">Hello dari Playground! 🎉</div>
+</textarea>
+          <textarea class="code" id="code-css" style="display:none" spellcheck="false">/* Tuliskan CSS di sini */
+.box { padding: 16px; border-radius: 12px; background: #eef2ff; color:#1f2937; font-weight:600; }
+</textarea>
+          <textarea class="code" id="code-js" style="display:none" spellcheck="false">// Tuliskan JavaScript di sini
+console.log('Playground siap!');
+</textarea>
+        </div>
+        <div class="preview">
+          <div class="bar"><strong>Preview</strong><div style="display:flex; gap:8px">
+            <button class="btn" id="openNew">Buka Tab Baru</button>
+            <button class="btn" id="resetCode">Reset Kode</button>
+          </div></div>
+          <iframe id="frame"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kuis -->
+    <section class="container" id="kuis">
+      <div class="section-title"><h2>Kuis Cepat</h2><span class="hint">Cek pemahaman kamu. Tidak ada nilai resmi.</span></div>
+      <div class="quiz" id="quiz"></div>
+      <div style="display:flex; gap:8px; margin-top: 6px;">
+        <button class="btn" id="submitQuiz">Kumpulkan</button>
+        <button class="btn" id="retryQuiz">Ulangi</button>
+        <div class="hint" id="quizResult" style="margin-left:auto"></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="container" id="faq">
+      <div class="section-title"><h2>FAQ</h2></div>
+      <div class="tools">
+        <div class="card"><h3>Apakah ini kursus berbayar?</h3><p>Tidak. Ini hanyalah website pembelajaran mandiri gratis. Tidak ada paket berbayar.</p></div>
+        <div class="card"><h3>Apakah ada halaman kontak?</h3><p>Tidak ada. Fokus di materi belajar tanpa formulir kontak.</p></div>
+        <div class="card"><h3>Bagaimana menyimpan progres?</h3><p>Centang materi yang selesai, progres akan tersimpan di perangkat ini (LocalStorage).</p></div>
+      </div>
+    </section>
+
+    <!-- Tentang -->
+    <section class="container" id="tentang">
+      <div class="section-title"><h2>Tentang Projek</h2></div>
+      <div class="tools">
+        <div class="card">
+          <h3>Tujuan</h3>
+          <p>Menyediakan materi ringkas dan interaktif untuk belajar IT dan pemrograman secara mandiri, tanpa biaya.</p>
+        </div>
+        <div class="card">
+          <h3>Lisensi</h3>
+          <p>Konten ini bersifat edukatif. Silakan gunakan untuk belajar dan mengajar dengan menyertakan atribusi.</p>
+        </div>
+        <div class="card">
+          <h3>Kontribusi</h3>
+          <p>Kamu dapat mengembangkan sendiri materi pada file ini atau memisahkan menjadi beberapa halaman sesuai kebutuhan.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Belajar IT & Coding — Gratis & Tanpa Kursus Berbayar.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
